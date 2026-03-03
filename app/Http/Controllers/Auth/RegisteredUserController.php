@@ -64,6 +64,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('pick-page',  false);
+        return redirect(route('pick-page',  absolute: false));
     }
 }

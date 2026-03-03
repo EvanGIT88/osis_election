@@ -120,7 +120,7 @@ class VotesController extends Controller
 
         $validated = $this->validator($constructedRequest);
         Vote::create($validated);
-        return redirect('/pick')->with("status", "Voted!");
+        return redirect('/pick-page')->with("status", "Voted!");
     }
 
         public function pickPage () {
@@ -129,6 +129,7 @@ class VotesController extends Controller
     }
 
      public function statisticsPage () {
+        $this->gate();
         //this can be better by using foreach so itsnot hardcoded like this
         $pairOne = OsisCandidateTeam::where(["pair" => Pairs::ONE])->first();
         $pairTwo = OsisCandidateTeam::where(["pair" => Pairs::TWO])->first();

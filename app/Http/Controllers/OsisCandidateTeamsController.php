@@ -60,7 +60,7 @@ class OsisCandidateTeamsController extends Controller
          $validated = Validator::make($data, [
           'vision' => 'required|regex:/^[\pL\s]+$/u|min:20|max:50',
           'mission' => 'required|regex:/^[\pL\s]+$/u|min:20|max:50',
-           'pair' => ['required', Rule::enum(Pairs::class), new PairLimit($id), Rule::unique("osis_candidate_teams", "pair")]
+           'pair' => ['required', Rule::enum(Pairs::class), new PairLimit($id), Rule::unique("osis_candidate_teams", "pair")->ignore($id)]
          ])->validate();
 
          return $validated;

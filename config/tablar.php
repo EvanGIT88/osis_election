@@ -112,7 +112,7 @@ return [
     */
 
     'use_route_url' => true,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'pick-page',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',

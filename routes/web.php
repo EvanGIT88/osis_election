@@ -48,7 +48,7 @@ Route::controller(VotesController::class)->group(function () {
     Route::put('/votes/update/{id}', 'update');
 
     //user's functions
-    Route::get('/pick-page', 'pickPage');
+    Route::get('/pick-page', 'pickPage')->name("pick-page");
      Route::post('/pick/{teamId}', 'pick');
 
          //statitic's functions
